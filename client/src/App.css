@@ -1,0 +1,58 @@
+/* Classes are put in alphabetical order */
+
+.app-nav {
+    display: flex;          /* Use flexbox layout */
+    justify-content: space-between; /* Space between items */
+    align-items: center;   /* Center items vertically */
+    padding: 10px;         /* Add some padding */
+    background-color: #f0f0f0; /* Optional: Background color for the nav */
+}
+
+.app-nav a {
+margin-right: 20px;    /* Space between links */
+}
+
+.app-nav .welcome-message {
+    margin-left: auto;      /* Pushes the message to the right */
+    margin-right: 20px;     /* Optional: Space on the right */
+}
+
+.div_center {
+    margin: auto;
+    width: 50%;
+}
+
+.div_flex_center {
+    display: flex;
+    justify-content: center;
+}
+
+.flex-grow {
+    flex-grow: 1; /* This div will take available space */
+}
+
+.flex_page {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Changed from space-around to space-between */
+    height: 90vh; /* Take full height of the viewport */
+}
+
+.headings {
+    font-family: 'Lora', serif;
+}
+
+.login_header {
+    font-weight: bold;
+    font-size: 30px;
+    color: red;
+}
+
+.main_page_title_text {
+    font-size: 60px;
+}
+
+.main_page_header_box {
+    display: flex;
+    justify-content: space-between;
+}

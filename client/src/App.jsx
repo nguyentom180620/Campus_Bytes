@@ -1,35 +1,57 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from 'react';
+import { Routes, Route, Link } from 'react-router-dom';
+import './App.css';
+import Login from './components/Login';
+import Signup from './components/Signup';
+import SignOut from './components/SignOut'; // Import SignOut component
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [user, setUser] = useState(null); // User state
+
+  const handleLogin = (userData) => {
+    setUser(userData); // Set user data on login
+  };
+
+  const handleSignOut = () => {
+    setUser(null); // Clear user data on sign out
+  };
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="div_flex_center">
+        <p className="main_page_title_text headings">Campus Bytes</p>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <nav className="app-nav"> {/* Apply the app-nav class */}
+        <Link to="/">Home</Link>
+        {user ? (
+          <>
+            <div className="welcome-message">Welcome, {user.username}!</div>
+            <SignOut onSignOut={handleSignOut} />
+          </>
+        ) : (
+          <>
+            <Link to="/login">Login</Link>
+            <Link to="/signup">Signup</Link>
+          </>
+        )}
+      </nav>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/login" element={<Login onLogin={handleLogin} />} />
+        <Route path="/signup" element={<Signup />} />
+      </Routes>
     </>
-  )
+  );
 }
 
-export default App
+function HomePage() {
+  return (
+    <div className="main_page_header_box div_center">
+      <p className="headings">Welcome to the Home Page!</p>
+      <Link to="/login">Login Here</Link>
+      <Link to="/signup">Signup Here</Link>
+    </div>
+  );
+}
+
+export default App;
