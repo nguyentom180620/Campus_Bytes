@@ -9,6 +9,8 @@ config.env:
     but the info is hidden as it requires a password. So, for safety reasons, ask Tom for directions.
 
 New way to run website:
+    - Navigate to client directory
+    - type and enter: npm run build (this generates the dist folder for this to work)
     - Navigate to server directory
     - type and enter: npm start
     - go to localhost:5050
