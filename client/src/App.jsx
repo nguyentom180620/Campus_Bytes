@@ -4,6 +4,7 @@ import './App.css';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import SignOut from './components/SignOut'; // Import SignOut component
+import Navbar from './components/Navbar';
 
 function App() {
   const [user, setUser] = useState(null); // User state
@@ -21,20 +22,11 @@ function App() {
       <div className="div_flex_center">
         <p className="main_page_title_text headings">Campus Bytes</p>
       </div>
-      <nav className="app-nav"> {/* Apply the app-nav class */}
-        <Link to="/">Home</Link>
-        {user ? (
-          <>
-            <div className="welcome-message">Welcome, {user.username}!</div>
-            <SignOut onSignOut={handleSignOut} />
-          </>
-        ) : (
-          <>
-            <Link to="/login">Login</Link>
-            <Link to="/signup">Signup</Link>
-          </>
-        )}
-      </nav>
+
+      <div className='w-[100vw] h-[100vh] bg-[#ced8ff]'>
+        <Navbar/>
+      </div>     
+
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<Login onLogin={handleLogin} />} />
