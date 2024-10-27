@@ -23,9 +23,9 @@ function App() {
         <p className="main_page_title_text headings">Campus Bytes</p>
       </div>
 
-      <div className='w-[100vw] h-[100vh] bg-[#ced8ff]'>
+      {/* <div className='w-[100vw] h-[100vh] bg-[#ced8ff]'>
         <Navbar/>
-      </div>     
+      </div>      */}
 
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -38,11 +38,16 @@ function App() {
 
 function HomePage() {
   return (
-    <div className="main_page_header_box div_center">
-      <p className="headings">Welcome to the Home Page!</p>
-      <Link to="/login">Login Here</Link>
-      <Link to="/signup">Signup Here</Link>
-    </div>
+    <>
+      <div className='w-[100vw] h-[100vh] bg-[#ced8ff]'>
+        <Navbar/>
+        <div className="main_page_header_box div_center">
+          <p className="headings">Welcome to the Home Page!</p>
+          <Link to="/login">Login Here</Link>
+          <Link to="/signup">Signup Here</Link>
+        </div>
+      </div> 
+    </>
   );
 }
 
