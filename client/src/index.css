@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@font-face {
+    font-family: 'CustomFont';
+    src: url('./fonts/moglandemo.regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

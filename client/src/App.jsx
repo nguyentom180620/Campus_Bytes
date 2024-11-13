@@ -31,9 +31,9 @@ function App() {
 
   return (
     <>
-      <div className="div_flex_center">
+      {/* <div className="div_flex_center">
         <p className="main_page_title_text headings">Campus Bytes</p>
-      </div>
+      </div> */}
 
       <Navbar user={user} onSignOut={handleSignOut} />
 
