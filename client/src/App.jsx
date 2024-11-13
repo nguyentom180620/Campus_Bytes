@@ -6,6 +6,7 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import Navbar from './components/Navbar';
 import FoodOptions from './components/FoodOptions'; // Import the new FoodOptions component
+import About from './components/About';
 
 function App() {
   const [user, setUser] = useState(null); // User state
@@ -41,6 +42,7 @@ function App() {
         <Route path="/login" element={<Login onLogin={handleLogin} />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/foodoptions" element={<FoodOptions />} /> {/* Add new route for food options */}
+        <Route path="/About" element={<About />} />
       </Routes>
     </>
   );
