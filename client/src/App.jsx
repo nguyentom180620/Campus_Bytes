@@ -50,7 +50,7 @@ function HomePage({ user }) {
   return (
     <div className="home-page-container w-full min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-200 to-indigo-300">
       <div className="text-center">
-        <p className="text-4xl font-semibold text-gray-800 mb-6">Welcome to the Home Page!</p>
+        <p className="text-4xl font-semibold text-gray-800 mb-6 font-custom">Welcome to the Campus Bytes!</p>
         {user ? (
           <>
             <p className="text-xl text-gray-600">Welcome, {user.username}!</p>
