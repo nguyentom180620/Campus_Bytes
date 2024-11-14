@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Navbar.css';
 import plate from '../assets/plate.png';
 import search from '../assets/search-icon-white.png';
@@ -11,7 +11,7 @@ const Navbar = ({ user, onSignOut }) => {
   return (
     <div className='navbar w-full flex items-center justify-between bg-[#fff] py-[15px] px-[7%]'>
       <Link to="/">
-      <img src={plate} className="logo w-[60px] cursor-pointer mr-5" alt="logo" />
+        <img src={plate} className="logo w-[60px] cursor-pointer mr-5" alt="logo" />
       </Link>
       <p className="main_page_title_text headings text-5xl font-custom mt-1">Campus Bytes</p>
 
@@ -19,7 +19,7 @@ const Navbar = ({ user, onSignOut }) => {
         <li className=''>
           <Link to="/" className='font-custom inline-block my-[10px] mx-[20px] text-[21px] cursor-pointer hover:bg-[#272727] hover:text-white rounded-md py-2 px-4 transition-colors hover:scale-110 transition-transform pt-3' >Home</Link>
         </li>
-        
+
         {user ? (
           <>
             <li className=''>

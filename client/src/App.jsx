@@ -1,47 +1,45 @@
 // App.jsx
 import React, { useState, useEffect } from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route, Link, useNavigate } from 'react-router-dom';
 import './App.css';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import Navbar from './components/Navbar';
-import FoodOptions from './components/FoodOptions'; // Import the new FoodOptions component
+import FoodOptions from './components/FoodOptions';
 import About from './components/About';
 
 function App() {
-  const [user, setUser] = useState(null); // User state
+  const [user, setUser] = useState(null);
+  const navigate = useNavigate();
 
   // Retrieve user data from localStorage on initial load
   useEffect(() => {
     const savedUser = localStorage.getItem('user');
     if (savedUser) {
-      setUser(JSON.parse(savedUser)); // Parse and set saved user
+      setUser(JSON.parse(savedUser));
     }
   }, []);
 
   const handleLogin = (userData) => {
-    setUser(userData); // Set user data on login
-    localStorage.setItem('user', JSON.stringify(userData)); // Save user data in localStorage
+    setUser(userData);
+    localStorage.setItem('user', JSON.stringify(userData));
   };
 
   const handleSignOut = () => {
-    setUser(null); // Clear user data on sign out
-    localStorage.removeItem('user'); // Remove user data from localStorage
+    setUser(null);
+    localStorage.removeItem('user');
+    navigate('/'); // Redirect to the home page after logging out
   };
 
   return (
     <>
-      {/* <div className="div_flex_center">
-        <p className="main_page_title_text headings">Campus Bytes</p>
-      </div> */}
-
       <Navbar user={user} onSignOut={handleSignOut} />
 
       <Routes>
         <Route path="/" element={<HomePage user={user} />} />
         <Route path="/login" element={<Login onLogin={handleLogin} />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/foodoptions" element={<FoodOptions />} /> {/* Add new route for food options */}
+        <Route path="/foodoptions" element={<FoodOptions />} />
         <Route path="/About" element={<About />} />
       </Routes>
     </>
@@ -74,7 +72,7 @@ function HomePage({ user }) {
           </div>
         )}
       </div>
-    </div> 
+    </div>
   );
 }
 
