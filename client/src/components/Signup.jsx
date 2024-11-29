@@ -32,10 +32,10 @@ const Signup = () => {
   return (
     <div className="signup-page-container flex items-center justify-center min-h-screen bg-gradient-to-r from-green-200 to-teal-300">
       <div className="form-container bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
-        <h2 className="text-3xl font-semibold text-center text-gray-800 mb-6">Sign Up</h2>
+        <h2 className="text-3xl font-semibold text-center text-gray-800 mb-6 cursor-default">Sign Up</h2>
         <form onSubmit={handleSignup}>
           <div className="mb-4">
-            <label htmlFor="username" className="block text-gray-700 font-medium mb-2">Username:</label>
+            <label htmlFor="username" className="block text-gray-700 font-medium mb-2 cursor-default">Username:</label>
             <input
               type="text"
               id="username"
@@ -47,7 +47,7 @@ const Signup = () => {
             />
           </div>
           <div className="mb-4">
-            <label htmlFor="email" className="block text-gray-700 font-medium mb-2">Email:</label>
+            <label htmlFor="email" className="block text-gray-700 font-medium mb-2 cursor-default">Email:</label>
             <input
               type="email"
               id="email"
@@ -58,8 +58,8 @@ const Signup = () => {
               placeholder="Email"
             />
           </div>
-          <div className="mb-6">
-            <label htmlFor="password" className="block text-gray-700 font-medium mb-2">Password:</label>
+          <div className="">
+            <label htmlFor="password" className="block text-gray-700 font-medium mb-2 cursor-default">Password:</label>
             <input
               type="password"
               id="password"
@@ -71,9 +71,10 @@ const Signup = () => {
             />
           </div>
           {error && <p className="text-red-600 text-sm mb-4">{error}</p>}
+          <a href="/login" className='block text-left text-black text-sm mt-1 hover:text-green-700 transition duration-200 hover:underline'>Already have an account?</a>
           <button
             type="submit"
-            className="w-full bg-green-600 text-white py-2 rounded-md text-lg font-medium transition duration-200 hover:bg-green-700"
+            className="w-full mt-2 bg-green-600 text-white py-2 rounded-md text-lg font-medium transition duration-200 hover:bg-green-700"
           >
             Sign Up
           </button>

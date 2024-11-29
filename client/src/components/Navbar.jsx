@@ -13,7 +13,7 @@ const Navbar = ({ user, onSignOut }) => {
       <Link to="/">
         <img src={plate} className="logo w-[60px] cursor-pointer mr-5" alt="logo" />
       </Link>
-      <p className="main_page_title_text headings text-5xl font-custom mt-1">Campus Bytes</p>
+      <p className="main_page_title_text headings text-5xl font-custom mt-1 cursor-default">Campus Bytes</p>
 
       <ul className='flex list-none ml-auto mr-5 justify-between '>
         <li className=''>
@@ -27,9 +27,13 @@ const Navbar = ({ user, onSignOut }) => {
                 Logout
               </button>
             </li>
-            <li className='font-semibold inline-block my-[10px] mx-[20px] text-[21px] pt-2.5 '>
-              Welcome, {user.username}!
+            <li className=''>
+              <Link to="/about" className='font-custom inline-block my-[10px] mx-[20px] text-[21px] cursor-pointer hover:bg-[#272727] hover:text-white rounded-md py-2 px-4 transition-colors hover:scale-110 transition-transform pt-3'>About</Link>
             </li>
+            <li className=''>
+              <Link to="/contacts" className='font-custom inline-block my-[10px] mx-[20px] text-[21px] cursor-pointer hover:bg-[#272727] hover:text-white rounded-md py-2 px-4 transition-colors hover:scale-110 transition-transform pt-3'>Contact</Link>
+            </li>
+            
           </>
         ) : (
           <>
@@ -38,6 +42,12 @@ const Navbar = ({ user, onSignOut }) => {
             </li>
             <li className=''>
               <Link to="/signup" className='font-custom inline-block my-[10px] mx-[20px] text-[21px] cursor-pointer hover:bg-[#272727] hover:text-white rounded-md py-2 px-4 transition-colors hover:scale-110 transition-transform pt-3'>Sign Up</Link>
+            </li>
+            <li className=''>
+              <Link to="/about" className='font-custom inline-block my-[10px] mx-[20px] text-[21px] cursor-pointer hover:bg-[#272727] hover:text-white rounded-md py-2 px-4 transition-colors hover:scale-110 transition-transform pt-3'>About</Link>
+            </li>
+            <li className=''>
+              <Link to="/contacts" className='font-custom inline-block my-[10px] mx-[20px] text-[21px] cursor-pointer hover:bg-[#272727] hover:text-white rounded-md py-2 px-4 transition-colors hover:scale-110 transition-transform pt-3'>Contact</Link>
             </li>
           </>
         )}

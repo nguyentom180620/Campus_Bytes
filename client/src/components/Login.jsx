@@ -36,10 +36,10 @@ function Login({ onLogin }) {
   return (
     <div className="login-page-container flex items-center justify-center min-h-screen bg-gradient-to-r from-blue-200 to-indigo-300">
       <div className="form-container bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
-        <h2 className="text-3xl font-semibold text-center text-gray-800 mb-6">Login</h2>
+        <h2 className="text-3xl font-semibold text-center text-gray-800 mb-6 cursor-default">Login</h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
-            <label htmlFor="username" className="block text-gray-700 font-medium mb-2">Username:</label>
+            <label htmlFor="username" className="block text-gray-700 font-medium mb-2 cursor-default">Username:</label>
             <input
               type="text"
               id="username"
@@ -49,8 +49,8 @@ function Login({ onLogin }) {
               className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
-          <div className="mb-6">
-            <label htmlFor="password" className="block text-gray-700 font-medium mb-2">Password:</label>
+          <div className="mb-2">
+            <label htmlFor="password" className="block text-gray-700 font-medium mb-2 cursor-default">Password:</label>
             <input
               type="password"
               id="password"
@@ -61,9 +61,10 @@ function Login({ onLogin }) {
             />
           </div>
           {errorMessage && <p className="text-red-600 text-sm mb-4">{errorMessage}</p>}
+          <a href="/signup" className='block text-left text-black text-sm mt-1 hover:text-blue-500 transition duration-200 hover:underline'>Don't have an account?</a>
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white py-2 rounded-md text-lg font-medium transition duration-200 hover:bg-blue-700"
+            className="mt-2 w-full bg-blue-600 text-white py-2 rounded-md text-lg font-medium transition duration-200 hover:bg-blue-700"
           >
             Login
           </button>
